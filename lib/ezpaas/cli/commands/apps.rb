@@ -3,6 +3,7 @@ require 'tty'
 require 'random-word'
 require 'uri'
 require 'ezpaas/cli/commands/server_commands'
+require 'ezpaas/http/rest_client'
 
 module EzPaaS
   module CLI
