@@ -16,7 +16,7 @@ module EzPaaS
           pastel = Pastel.new
           not_deployed = pastel.red('(not deployed)')
 
-          table = TTY::Table.new(header: ['name', 'slug', 'scale', 'url']) do |t|
+          table = TTY::Table.new(header: ['Name', 'Slug', 'Scale', 'URL']) do |t|
             apps.each do |app|
 
               app_name = app['name']
