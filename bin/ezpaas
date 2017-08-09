@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'ezpaas/cli'
+require 'tty'
+
+begin
+	EzPaaS::CLI::Main.start(ARGV)
+rescue Exception => e
+	pastel = Pastel.new
+	puts
+	puts pastel.red.bold('Error:') + ' ' + e.message
+end
