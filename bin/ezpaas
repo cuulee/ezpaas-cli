@@ -3,10 +3,10 @@
 require 'ezpaas/cli'
 require 'tty'
 
-# begin
+begin
 	EzPaaS::CLI::Main.start(ARGV)
-# rescue Exception => e
-# 	pastel = Pastel.new
-# 	puts
-# 	puts pastel.red.bold('Error:') + ' ' + e.message
-# end
+rescue Exception => e
+	pastel = Pastel.new
+	puts
+	puts pastel.red.bold('Error:') + ' ' + e.message
+end
