@@ -27,7 +27,7 @@ module EzPaaS
           headers = {'Content-Type': 'application/tar'}
 
           source.on :message do |event|
-          	puts event
+            yield event.data if block_given?
           end
 
           Excon.post(url, {:body => file, :response_block => streamer, :headers => headers})

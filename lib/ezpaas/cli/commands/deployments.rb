@@ -9,18 +9,19 @@ module EzPaaS
     module Commands
       class Deployments < ServerCommands
 
-        desc 'push', 'Pushes the current git repository '
+        desc 'push <app name>', 'Pushes the current git repository'
         option :dir, :type => :string, :default => Dir.pwd
         option :branch, :type => :string, :default => 'master'
-        option :app, :type => :string
-        def push
+        def push(app)
           git = Git.open(options[:dir])
           branch = git.branches[options[:branch]]
           begin
             path = Dir::Tmpname.create('ezpaas') do |file|
               branch.archive(file, {format: 'tar'})
             end
-            sse_client.deploy('inept-florio', path)
+            sse_client.deploy(app, path) do |message|
+              puts message
+            end
           ensure
             File.delete(path)
           end
