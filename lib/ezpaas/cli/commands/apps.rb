@@ -86,12 +86,13 @@ module EzPaaS
           end
 
           if prompt.yes?('Are you sure?', default: false)
-          	puts client.destroy_app(app_name)
+            puts client.destroy_app(app_name)
+            puts
+            puts "App #{app_name} destroyed successfully!"
           else
-          	puts
+            puts
             puts pastel.blue('Phew!') + ' App deletion aborted.'
           end
-
         end
 
       end
