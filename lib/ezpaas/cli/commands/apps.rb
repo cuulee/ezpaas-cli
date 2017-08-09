@@ -86,7 +86,7 @@ module EzPaaS
           end
 
           if prompt.yes?('Are you sure?', default: false)
-            puts client.destroy_app(app_name)
+            client.destroy_app(app_name)
             puts
             puts "App #{app_name} destroyed successfully!"
           else
