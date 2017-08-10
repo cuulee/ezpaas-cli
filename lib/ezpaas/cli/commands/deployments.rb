@@ -12,11 +12,13 @@ module EzPaaS
       class Deployments < ServerCommands
 
         desc 'push <app name>', 'Pushes the current git repository'
+        option :app, :type => :string, :required => true
         option :dir, :type => :string, :default => Dir.pwd
         option :branch, :type => :string, :default => 'master'
-        def push(app)
+        def push
           pastel = Pastel.new
 
+          app = options[:app]
           dir = options[:dir]
           branch = options[:branch]
 
@@ -45,14 +47,15 @@ module EzPaaS
           end
         end
 
-        desc 'destroy', 'Lists all apps registered with the EzPaaS server'
-        def destroy
-          puts 'hey'
+        desc 'destroy', 'Scales all processes of an EzPaas app to zero'
+        def destroy(app)
+          puts hey
         end
 
-        desc 'scale', 'Lists all apps registered with the EzPaaS server'
-        def scale
+        desc 'scale <app> [<process=count>...]', 'Scales the processes of an EzPaas app'
+        def scale(app, *scales)
           puts 'hey'
+          puts scales
         end
 
         private
