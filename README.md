@@ -15,6 +15,10 @@ We longed for a simple, on-site [PaaS](https://en.wikipedia.org/wiki/Platform_as
 
 **Important!** To use this CLI utility, you need to have [EzPaaS Server](https://github.com/TENDIGI/ezpaas-server) deployed somewhere. This can be on your local machine (the CLI will connect to `localhost` on port 3000 by default) or a remote server by passing the `--server` option.
 
+#### Ruby
+
+EzPaaS also requires [Ruby 2.2 or newer](https://www.ruby-lang.org/en/downloads/). It may work with older versions, but they have not been tested.
+
 ## Installation
 
 Install the gem. The easiest way is to install it for all users with `sudo`:
