@@ -1,4 +1,4 @@
-#EzPaaS CLI
+# EzPaaS CLI
 ### A miniature Heroku clone for easy in-house deployments, powered by Docker.
 
 ## What Is It?
