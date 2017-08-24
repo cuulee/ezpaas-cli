@@ -13,7 +13,7 @@ We longed for a simple, on-site [PaaS](https://en.wikipedia.org/wiki/Platform_as
 
 #### EzPaaS Server
 
-To use this CLI utility, you need to have EzPaaS Server deployed somewhere. This can be on your local machine (the CLI will connect to `localhost` on port 3000 by default) or a remote server by passing the `--server` option.
+**Important!** To use this CLI utility, you need to have [EzPaaS Server](https://github.com/TENDIGI/ezpaas-server) deployed somewhere. This can be on your local machine (the CLI will connect to `localhost` on port 3000 by default) or a remote server by passing the `--server` option.
 
 ## Installation
 
